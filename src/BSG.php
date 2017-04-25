@@ -1,8 +1,10 @@
 <?php
 
-require_once 'BSG/SmsApiClient.php';
-require_once 'BSG/HLRApiClient.php';
-require_once 'BSG/ViberApiClient.php';
+namespace SilkSoftwareHouse\BsgPhp;
+
+use SilkSoftwareHouse\BsgPhp\BSG\HLRApiClient;
+use SilkSoftwareHouse\BsgPhp\BSG\SmsApiClient;
+use SilkSoftwareHouse\BsgPhp\BSG\ViberApiClient;
 
 class BSG
 {

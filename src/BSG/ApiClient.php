@@ -1,5 +1,7 @@
 <?php
 
+namespace SilkSoftwareHouse\BsgPhp\BSG;
+
 class ApiClient {
 
     const API_URL = 'https://api.bsg.hk/v1.0/';

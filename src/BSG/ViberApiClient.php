@@ -1,6 +1,6 @@
 <?php
 
-require_once 'ApiClient.php';
+namespace SilkSoftwareHouse\BsgPhp\BSG;
 
 class ViberApiClient extends ApiClient {
 
@@ -86,7 +86,7 @@ class ViberApiClient extends ApiClient {
      * @param null $tariff
      * @param bool $only_price
      * @return mixed
-     * @throws Exception
+     * @throws \Exception
      */
     public function sendMessages ($validity=86400, $tariff=NULL, $only_price=false)
     {

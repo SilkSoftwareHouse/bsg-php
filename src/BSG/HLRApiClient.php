@@ -1,6 +1,6 @@
 <?php
-require_once 'ApiClient.php';
 
+namespace SilkSoftwareHouse\BsgPhp\BSG;
 
 class HLRApiClient extends ApiClient {
 
@@ -16,9 +16,9 @@ class HLRApiClient extends ApiClient {
     {
         try {
             $resp = $this->sendRequest($endpoint);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $error = 'Request failed (code: ' .$e->getCode() .'): ' . $e->getMessage();
-            throw new Exception ($error, -1);
+            throw new \Exception ($error, -1);
         }
 
         return json_decode($resp,true);
@@ -38,9 +38,9 @@ class HLRApiClient extends ApiClient {
     {
         try {
             $resp = $this->sendRequest('hlr/prices' . ($tariff !== NULL ? ('/' . $tariff) : ''));
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $error = 'Request failed (code: ' .$e->getCode() .'): ' . $e->getMessage();
-            throw new Exception ($error, -1);
+            throw new \Exception ($error, -1);
         }
         $result = json_decode($resp,true);
         return $result;
@@ -57,9 +57,9 @@ class HLRApiClient extends ApiClient {
             $message['tariff'] = $tariff;
         try {
             $resp = $this->sendRequest('hlr/create',$message);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $error = 'Request failed (code: ' .$e->getCode() .'): ' . $e->getMessage();
-            throw new Exception ($error, -1);
+            throw new \Exception ($error, -1);
         }
         $result = json_decode($resp,true);
         return $result;
@@ -71,15 +71,15 @@ class HLRApiClient extends ApiClient {
      * are optional
      * @param $payload
      * @return array
-     * @throws Exception
+     * @throws \Exception
      */
     public function sendHLRs ($payload)
     {
         try {
             $resp = $this->sendRequest('hlr/create',json_encode($payload),'PUT');
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $error = 'Request failed (code: ' .$e->getCode() .'): ' . $e->getMessage();
-            throw new Exception ($error, -1);
+            throw new \Exception ($error, -1);
         }
         $result = json_decode($resp,true);
         return $result;
