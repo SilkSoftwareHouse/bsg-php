@@ -1,4 +1,13 @@
 {
+
+    "name": "silksoftwarehouse/bsg-php",
+    "description": "BSG API",
+    "keywords": [
+        "bsg",
+        "sms",
+        "api",
+        "php"
+    ],
     "require-dev": {
         "phpunit/phpunit": "^5.7"
     }
